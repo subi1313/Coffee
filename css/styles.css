@@ -4024,17 +4024,25 @@ td:last-child {
  * -------------------------------------------------------------------- */
 .about-pic-primary {
     width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;    
 }
 
-.about-pic-primary img {
-    padding           : 0;
-    margin            : 0;
-    -o-object-fit     : cover;
-    object-fit        : cover;
-    -o-object-position: center;
-    object-position   : center;
-    aspect-ratio      : 2000/2000;
+.about-pic-primary img {                
+    max-width: 500px;          
+    height: auto;             
+    object-fit: cover;         
+    object-position: center;       
+    display: block;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    border-radius: inherit;
 }
+
+.about-pic-primary:hover img {
+  transform: scale(1.2);
+}
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
